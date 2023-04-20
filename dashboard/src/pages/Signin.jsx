@@ -2,12 +2,10 @@ import React, { useState } from "react";
 
 import { FcGoogle } from "react-icons/fc";
 import { RiAppleFill } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
-import { useUser, useAddUser } from "../components/UserContext";
+import { Link } from "react-router-dom";
+import { useAddUser } from "../components/UserContext";
 
 const Signin = () => {
-  const navigate = useNavigate();
-  const user = useUser();
   const handleClick = useAddUser();
 
   return (
@@ -33,7 +31,10 @@ const Signin = () => {
                   Sign in with Google
                 </span>
               </button>
-              <button className="rounded-lg px-4 bg-white flex-1 h-8 flex items-center justify-center gap-2"  onClick={handleClick}>
+              <button
+                className="rounded-lg px-4 bg-white flex-1 h-8 flex items-center justify-center gap-2"
+                onClick={handleClick}
+              >
                 <RiAppleFill />
                 <span className="text-[#858585] text-xs max-xl:hidden">
                   Sign in with Apple
@@ -60,7 +61,10 @@ const Signin = () => {
                 />
               </div>
               <div className="text-[#346BD4]">Forgot Password?</div>
-              <button className="bg-black text-white mt-6 h-8 rounded-lg w-[100%] font-bold"  onClick={handleClick}>
+              <button
+                className="bg-black text-white mt-6 h-8 rounded-lg w-[100%] font-bold"
+                onClick={handleClick}
+              >
                 Sign in
               </button>
             </form>
